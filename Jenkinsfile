@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Git repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/srisan78/apachewebsite.git'
+                git 'https://github.com/srisan78/apachewebsite.git'
             }
         }
 
