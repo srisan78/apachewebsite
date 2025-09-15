@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apachewebsite-deployment
+  labels:
+    app: apachewebsite
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: apachewebsite
+  template:
+    metadata:
+      labels:
+        app: apachewebsite
+    spec:
+      containers:
+      - name: apachewebsite
+        image: sridhar76/apachewebsite:latest
+        ports:
+        - containerPort: 80
